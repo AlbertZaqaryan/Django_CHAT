@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+
+{% block content %}
+  <h2>My Rooms</h2>
+  {% if rooms %}
+    <ul>
+      {% for room in rooms %}
+        <li><a href="{% url 'room_chat' room.id %}">{{ room.name }}</a></li>
+      {% endfor %}
+    </ul>
+  {% else %}
+    <p>You are not a member of any rooms.</p>
+  {% endif %}
+{% endblock %}
